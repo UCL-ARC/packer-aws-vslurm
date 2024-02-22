@@ -31,7 +31,7 @@ source "amazon-ebs" "rhel9" {
 
 # server
 build {
-  name = "${var.ami_prefix}-${local.timestamp}-server"
+  name = local.ami_name_server
   sources = [
     "source.amazon-ebs.rhel9"
   ]
