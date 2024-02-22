@@ -13,6 +13,7 @@ variable "ami_prefix" {
 }
 
 locals {
-  timestamp = regex_replace(timestamp(), "[- TZ:]", "")
-  ami_name_server = "${var.ami_prefix}-cluster-server-${local.timestamp}"
+  timestamp           = regex_replace(timestamp(), "[- TZ:]", "")
+  ami_name_configurer = "${var.ami_prefix}-configurer-${local.timestamp}"
+  ami_name_server     = "${var.ami_prefix}-cluster-server-${local.timestamp}"
 }
