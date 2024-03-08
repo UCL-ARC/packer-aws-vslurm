@@ -2,7 +2,7 @@
 
 sudo mkdir --mode 0755 /shared
 sudo chown root:root /shared
-sudo mkdir --mode 0755 /mnt/nfs/home
+sudo mkdir --mode 0755 -p /mnt/nfs/home
 sudo chown root:root /mnt/nfs/home
 
 sudo dnf -yq install slurm-slurmd slurm-pam_slurm slurm-contribs nfs-utils
