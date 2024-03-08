@@ -24,5 +24,5 @@ locals {
   ami_name_login        = "${var.ami_prefix}-cluster-login-${local.timestamp}"
   ami_name_database     = "${var.ami_prefix}-cluster-database-${local.timestamp}"
   ami_name_nfs_server   = "${var.ami_prefix}-cluster-nfs-server-${local.timestamp}"
-  ami_name_compute_node = "${var.ami_prefix}-cluster-nfs-compute-node-${local.timestamp}"
+  ami_name_compute_node = "${var.ami_prefix}-cluster-compute-node-${local.timestamp}"
 }
