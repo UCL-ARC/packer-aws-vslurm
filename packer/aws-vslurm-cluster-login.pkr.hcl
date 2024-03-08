@@ -26,7 +26,7 @@ source "amazon-ebs" "rhel9-login" {
     owners      = ["309956199498"] # Red Hat
   }
 
-  ssh_username = "ec2-user"
+  ssh_username = var.username
 }
 
 build {
@@ -37,6 +37,7 @@ build {
 
   provisioner "shell" {
     environment_vars = [
+      "NICKNAME=login",
       "EPEL9_RPM_URL=https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm",
       "MUNGE_DIR=/etc/munge",
       "SLURM_DIR=/etc/slurm",
