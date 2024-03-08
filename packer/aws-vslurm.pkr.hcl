@@ -12,6 +12,11 @@ variable "ami_prefix" {
   default = "vslurm"
 }
 
+variable "username" {
+  type = string
+  default = "ec2-user"
+}
+
 locals {
   timestamp             = regex_replace(timestamp(), "[- TZ:]", "")
   ami_name_configurer   = "${var.ami_prefix}-configurer-${local.timestamp}"
