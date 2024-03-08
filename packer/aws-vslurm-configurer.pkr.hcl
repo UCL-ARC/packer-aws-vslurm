@@ -26,10 +26,9 @@ source "amazon-ebs" "rhel9-configurer" {
     owners      = ["309956199498"] # Red Hat
   }
 
-  ssh_username = "ec2-user"
+  ssh_username = var.username
 }
 
-# server
 build {
   name = local.ami_name_configurer
   sources = [
@@ -37,6 +36,11 @@ build {
   ]
 
   provisioner "shell" {
+    environment_vars = [
+      "NICKNAME=configurer",
+      "ANSIBLE_INVENTORY=/home/${var.username}/ansible_inventory",
+      "REMOTE_USER=${var.username}"
+    ]
     scripts = [
       "./provisioner_scripts/aws-vslurm.provisioner.sh",
       "./provisioner_scripts/aws-vslurm-configurer.provisioner.sh",
