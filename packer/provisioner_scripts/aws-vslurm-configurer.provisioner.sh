@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-sudo dnf -y install git python3-pip
-pip install --no-input ansible
+sudo dnf -yq install git python3-pip
+pip install -q --no-input ansible
 
 echo "export ANSIBLE_INVENTORY=$ANSIBLE_INVENTORY" >> /home/$REMOTE_USER/.bashrc
 echo "export ANSIBLE_REMOTE_USER=$REMOTE_USER" >> /home/$REMOTE_USER/.bashrc
