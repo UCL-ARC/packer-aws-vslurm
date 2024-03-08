@@ -32,7 +32,7 @@ source "amazon-ebs" "rhel9-compute-node" {
 build {
   name = local.ami_name_compute_node
   sources = [
-    "source.amazon-ebs.rhel9"
+    "source.amazon-ebs.rhel9-compute-node"
   ]
 
   provisioner "shell" {

@@ -32,7 +32,7 @@ source "amazon-ebs" "rhel9-login" {
 build {
   name = local.ami_name_login
   sources = [
-    "source.amazon-ebs.rhel9"
+    "source.amazon-ebs.rhel9-login"
   ]
 
   provisioner "shell" {

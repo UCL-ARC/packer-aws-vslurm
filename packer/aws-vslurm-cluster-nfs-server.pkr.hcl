@@ -32,7 +32,7 @@ source "amazon-ebs" "rhel9-nfs-server" {
 build {
   name = local.ami_name_nfs_server
   sources = [
-    "source.amazon-ebs.rhel9"
+    "source.amazon-ebs.rhel9-nfs-server"
   ]
 
   provisioner "shell" {

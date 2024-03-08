@@ -1,4 +1,4 @@
-source "amazon-ebs" "rhel9" {
+source "amazon-ebs" "rhel9-server" {
   ami_name      = local.ami_name_server
   instance_type = "t2.medium"
   region        = "eu-west-2"
@@ -32,7 +32,7 @@ source "amazon-ebs" "rhel9" {
 build {
   name = local.ami_name_server
   sources = [
-    "source.amazon-ebs.rhel9"
+    "source.amazon-ebs.rhel9-server"
   ]
 
   provisioner "shell" {

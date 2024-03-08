@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-sudo echo "export NICKNAME=$NICKNAME" > /etc/profile.d/prompt.sh
-sudo echo "export PS1=\"[\$NICKNAME][\u@\h:\l \W]\\$ \"" >> /etc/bashrc
+sudo echo "export NICKNAME=$NICKNAME" | sudo tee /etc/profile.d/prompt.sh > /dev/null
+sudo echo "export PS1=\"[\$NICKNAME][\u@\h:\l \W]\\$ \"" | sudo tee --append /etc/bashrc > /dev/null
 
 sudo dnf -y update
 sudo dnf -y upgrade

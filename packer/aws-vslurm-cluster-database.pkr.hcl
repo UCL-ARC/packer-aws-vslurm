@@ -32,7 +32,7 @@ source "amazon-ebs" "rhel9-database" {
 build {
   name = local.ami_name_database
   sources = [
-    "source.amazon-ebs.rhel9"
+    "source.amazon-ebs.rhel9-database"
   ]
 
   provisioner "shell" {
