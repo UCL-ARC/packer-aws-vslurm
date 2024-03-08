@@ -37,7 +37,7 @@ build {
 
   provisioner "shell" {
     environment_vars = [
-      "NICKNAME=server"
+      "NICKNAME=server",
       "EPEL9_RPM_URL=https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm",
       "MUNGE_DIR=/etc/munge",
       "SLURM_DIR=/etc/slurm",

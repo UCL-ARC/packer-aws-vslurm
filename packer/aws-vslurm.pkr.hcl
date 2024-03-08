@@ -13,7 +13,7 @@ variable "ami_prefix" {
 }
 
 variable "username" {
-  type = string
+  type    = string
   default = "ec2-user"
 }
 
