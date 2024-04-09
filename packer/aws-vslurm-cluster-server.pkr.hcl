@@ -5,13 +5,13 @@ source "amazon-ebs" "rhel9-server" {
 
   vpc_filter {
     filters = {
-      "tag:Name" : "ARC-playpen"
+      "tag:Name" : var.vpc_name_filter
     }
   }
 
   subnet_filter {
     filters = {
-      "tag:Name" : "playpen-public-eu-west-2a"
+      "tag:Name" : var.subnet_name_filter
     }
   }
 

@@ -10,11 +10,28 @@ packer {
 variable "ami_prefix" {
   type    = string
   default = "vslurm"
+  description = "A prefix to be applied to the new AMIs"
 }
 
 variable "username" {
   type    = string
   default = "ec2-user"
+  description = "The username for the default user in the base image"
+}
+
+variable "vpc_name_filter" {
+  type = string
+  description = "A filter to identify the VPC to build the AMIs in"
+}
+
+variable "subnet_name_filter" {
+  type = string
+  description = "A filter to identify the subnet to build the AMIs in"
+}
+
+variable "source_rhel_ami_name_filter" {
+  type = string
+  description = "A filter to identify the name of the RHEL AMI to use as the base image"
 }
 
 locals {
