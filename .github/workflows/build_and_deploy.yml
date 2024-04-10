@@ -9,7 +9,7 @@ jobs:
   build-artifact:
     name: Build
     runs-on: ubuntu-latest
-    working-directory: ./packer
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -22,10 +22,14 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Packer Init
+        with:
+          working-dir: ./packer
         run: packer init .
 
       - name: Packer Build - Tags
         if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          working-dir: ./packer
         run: >
           packer build
           -var "vpc_name_filter=${{ secrets.VPC_NAME_FILTER }}"
