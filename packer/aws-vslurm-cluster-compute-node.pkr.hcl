@@ -17,7 +17,7 @@ source "amazon-ebs" "rhel9-compute-node" {
 
   source_ami_filter {
     filters = {
-      name                = "RHEL-9.2*-Access2-GP2"
+      name                = var.source_rhel_ami_name_filter 
       root-device-type    = "ebs"
       virtualization-type = "hvm"
       architecture        = "x86_64"
