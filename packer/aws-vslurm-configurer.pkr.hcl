@@ -37,7 +37,6 @@ build {
 
   provisioner "shell" {
     environment_vars = [
-      "NICKNAME=configurer",
       "ANSIBLE_INVENTORY=/home/${var.username}/ansible_inventory",
       "REMOTE_USER=${var.username}"
     ]
