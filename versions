@@ -1,2 +1,0 @@
-# renovate: datasource=repology depName=epel_9/slurm versioning=loose
-SLURM_VERSION="22.05.9"
